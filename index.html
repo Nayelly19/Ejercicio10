@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Web Completa
+  </title>
+  <style>
+    body {
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #e40d9c;
+      font-size: 3em;
+    }
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #e40d9c;
+    }
+    nav a.active {
+      color: #e40d9c;
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      background-color: #dd139a;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .close:hover {
+      color: #ff6347;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    form input, form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    form button {
+      background-color: #e40d9c;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #c20b85;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi Biografía</h1>
+  </header>
+
+  <nav>
+    <a href="#inicio" class="active">Inicio</a>
+    <a href="#pasatiempos">Pasatiempos</a>
+    <a href="#contacto">Contacto</a>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>    
+    </div>      
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenido</h2>
+    <p> ¡Hola! Me llamo Antonela Cedeño y soy una persona apasionada por la tecnología y el aprendizaje continuo. 
+        Nací en Daule, Ecuador y desde pequeña siempre me ha interesado explorar cómo funcionan las cosas. 
+        Actualmente, estoy estudiando la carrera de Ingenieria en Sistemas Inteligentes y disfruto mucho trabajando en proyectos relacionados 
+        con programación o trabajos en diseño de marketing. En mi tiempo libre, me gusta leer, programar y pasar tiempo con mis seres queridos.</p>
+  </section>
+
+  <section id="pasatiempos">
+    <h2>Mis Pasatiempos</h2>
+    <div class="gallery">
+        <img src="https://i.pinimg.com/736x/3a/9c/a7/3a9ca7df7b02384239af1f283c2cb48b.jpg" alt="Lectura" onclick="openModal(this)">
+        <img src="https://i.pinimg.com/736x/8b/d5/a3/8bd5a37f4a12730c2d8bf58149b0e232.jpg" alt="Pintura" onclick="openModal(this)">
+        <img src="https://i.pinimg.com/736x/f3/66/78/f36678a75ccddae385e7b563ceb7a774.jpg" alt="Deportes" onclick="openModal(this)">
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes contactarme a través de mis redes sociales o puedes llenar este formulario con tus datos y así obtendrás una respuesta de mi parte.</p>
+    <form id="contactForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2005 Mi Biografía</p>
+  </footer>
+
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function openModal(img) {
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelector('nav a.active').classList.remove('active');
+        this.classList.add('active');
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault(); 
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const edad = document.getElementById('edad').value;
+
+      alert(`Datos enviados:\nNombre: ${nombre}\nCorreo Electrónico: ${email}\nEdad: ${edad}`);
+
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+</body>
+</html>
